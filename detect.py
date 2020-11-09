@@ -202,7 +202,7 @@ if __name__ == '__main__':
 
 def detect(imgs):
 	cfg.merge_from_file("config/ade20k-resnet50dilated-ppm_deepsup.yaml")
-	cfg.merge_from_list(None)
+	cfg.merge_from_list([])
 	cfg.MODEL.arch_encoder = cfg.MODEL.arch_encoder.lower()
 	cfg.MODEL.arch_decoder = cfg.MODEL.arch_decoder.lower()
 	cfg.MODEL.weights_encoder = os.path.join(
