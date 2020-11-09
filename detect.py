@@ -207,6 +207,7 @@ def detect(imgs):
 	cfg.MODEL.arch_decoder = cfg.MODEL.arch_decoder.lower()
 	cfg.MODEL.weights_encoder = os.path.join(
 		cfg.DIR, 'encoder_' + cfg.TEST.checkpoint)
+	print(cfg.MODEL.weights_encoder)
 	cfg.MODEL.weights_decoder = os.path.join(
 		cfg.DIR, 'decoder_' + cfg.TEST.checkpoint)
 	assert os.path.exists(cfg.MODEL.weights_encoder) and \
