@@ -32,6 +32,7 @@ def visualize_result(data, pred, cfg):
 
     # print predictions in descending order
     pred = np.int32(pred)
+    print("The predictions are: ", pred, pred.size)
     pixs = pred.size
     uniques, counts = np.unique(pred, return_counts=True)
     print("Predictions in [{}]:".format(info))
@@ -80,7 +81,6 @@ def test(segmentation_module, loader, gpu):
 
             _, pred = torch.max(scores, dim=1)
             pred = as_numpy(pred.squeeze(0).cpu())
-            print("The predictions are: ", pred)
 
         # visualization
         visualize_result(
