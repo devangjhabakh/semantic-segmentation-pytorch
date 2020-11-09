@@ -44,7 +44,7 @@ def visualize_result(data, pred, cfg):
 
 	# colorize prediction
 	pred_color = colorEncode(pred, colors).astype(np.uint8)
-	return pred_color
+	return pred_color.tolist()
 	print("Colorized: ", pred_color, pred_color.shape)
 
 	# aggregate images and save
