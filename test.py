@@ -32,7 +32,7 @@ def visualize_result(data, pred, cfg):
 
     # print predictions in descending order
     pred = np.int32(pred)
-    print("The predictions are: ", pred, pred.size)
+    print("The predictions are: ", pred, pred.shape)
     pixs = pred.size
     uniques, counts = np.unique(pred, return_counts=True)
     print("Predictions in [{}]:".format(info))
@@ -44,6 +44,7 @@ def visualize_result(data, pred, cfg):
 
     # colorize prediction
     pred_color = colorEncode(pred, colors).astype(np.uint8)
+    print("Colorized: ", pred_color, pred_color.shape)
 
     # aggregate images and save
     im_vis = np.concatenate((img, pred_color), axis=1)
