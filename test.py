@@ -79,6 +79,7 @@ def test(segmentation_module, loader, gpu):
                 scores = scores + pred_tmp / len(cfg.DATASET.imgSizes)
 
             _, pred = torch.max(scores, dim=1)
+            print(pred)
             pred = as_numpy(pred.squeeze(0).cpu())
 
         # visualization
